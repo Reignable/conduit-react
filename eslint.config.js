@@ -24,7 +24,8 @@ export default tseslint.config(
         'warn',
         { allowConstantExport: true },
       ],
-      '@stylistic/jsx-one-expression-per-line': ["error", {allow: 'single-line'}]
+      '@stylistic/jsx-one-expression-per-line': ["error", {allow: 'single-line'}],
+      'no-restricted-exports': ['error', {restrictDefaultExports: {direct: true, named: true}}]
     },
   },
 )
