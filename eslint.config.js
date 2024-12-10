@@ -8,7 +8,11 @@ import tseslint from 'typescript-eslint'
 export default tseslint.config(
   { ignores: ['dist'] },
   {
-    extends: [js.configs.recommended, ...tseslint.configs.recommended, stylistic.configs['recommended-flat']],
+    extends: [
+      js.configs.recommended, 
+      ...tseslint.configs.recommended, 
+      stylistic.configs['recommended-flat']
+    ],
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
@@ -25,6 +29,7 @@ export default tseslint.config(
         { allowConstantExport: true },
       ],
       '@stylistic/jsx-one-expression-per-line': ["error", {allow: 'single-line'}],
+      '@stylistic/max-len': 'error',
       'no-restricted-exports': ['error', {restrictDefaultExports: {direct: true, named: true}}]
     },
   },
